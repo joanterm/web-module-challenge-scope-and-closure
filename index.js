@@ -28,11 +28,12 @@ console.log(processFirstItem(['foo','bar'],function(str){return str+str}));
   Study the code for counter1 and counter2, then answer the questions below.
   
   1. What is the difference between counter1 and counter2?
-  
+  //counter1 uses closures and declares count inside a scope, while counter2 declares it globally
   2. Which of the two uses a closure? How can you tell?
-  
+  //counter1 because it has a function inside a function
   3. In what scenario would the counter1 code be preferable? In what scenario would 
      counter2 be better?  
+  //if you need another counter function without having to write a brand new function, you would use counter1. You would use counter2 if you don't need to declare another counting function
 */
 
 // counter1 code
@@ -42,7 +43,6 @@ function counterMaker() {
    return count++;
   }
 }
-
 const counter1 = counterMaker();
 
 // counter2 code
